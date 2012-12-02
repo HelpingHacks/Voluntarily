@@ -1,0 +1,69 @@
+<%= form_for(@survey) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contacted %><br />
+    <%= f.check_box :contacted %>
+  </div>
+  <div class="field">
+    <%= f.label :continue_visiting %><br />
+    <%= f.check_box :continue_visiting %>
+  </div>
+  <div class="field">
+    <%= f.label :urgency %><br />
+    <%= f.number_field :urgency %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br />
+    <%= f.check_box :power %>
+  </div>
+  <div class="field">
+    <%= f.label :heat %><br />
+    <%= f.check_box :heat %>
+  </div>
+  <div class="field">
+    <%= f.label :water %><br />
+    <%= f.check_box :water %>
+  </div>
+  <div class="field">
+    <%= f.label :gas %><br />
+    <%= f.check_box :gas %>
+  </div>
+  <div class="field">
+    <%= f.label :food %><br />
+    <%= f.check_box :food %>
+  </div>
+  <div class="field">
+    <%= f.label :medical %><br />
+    <%= f.check_box :medical %>
+  </div>
+  <div class="field">
+    <%= f.label :clothing %><br />
+    <%= f.number_field :clothing %>
+  </div>
+  <div class="field">
+    <%= f.label :water %><br />
+    <%= f.check_box :water %>
+  </div>
+  <div class="field">
+    <%= f.label :flashlights %><br />
+    <%= f.number_field :flashlights %>
+  </div>
+  <div class="field">
+    <%= f.label :misc %><br />
+    <%= f.text_field :misc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

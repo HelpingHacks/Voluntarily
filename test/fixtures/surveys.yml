@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contacted: false
+  continue_visiting: false
+  urgency: 1
+  power: false
+  heat: false
+  water: false
+  gas: false
+  food: false
+  medical: false
+  clothing: 1
+  water: false
+  flashlights: 1
+  misc: MyString
+
+two:
+  contacted: false
+  continue_visiting: false
+  urgency: 1
+  power: false
+  heat: false
+  water: false
+  gas: false
+  food: false
+  medical: false
+  clothing: 1
+  water: false
+  flashlights: 1
+  misc: MyString
