@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201212959) do
+ActiveRecord::Schema.define(:version => 20121202024109) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -148,5 +148,22 @@ ActiveRecord::Schema.define(:version => 20121201212959) do
 
   add_index "seo_meta", ["id"], :name => "index_seo_meta_on_id"
   add_index "seo_meta", ["seo_meta_id", "seo_meta_type"], :name => "index_seo_meta_on_seo_meta_id_and_seo_meta_type"
+
+  create_table "surveys", :force => true do |t|
+    t.boolean  "contacted"
+    t.boolean  "continue_visiting"
+    t.integer  "urgency"
+    t.boolean  "power"
+    t.boolean  "heat"
+    t.boolean  "water"
+    t.boolean  "gas"
+    t.boolean  "food"
+    t.boolean  "medical"
+    t.integer  "clothing"
+    t.integer  "flashlights"
+    t.string   "misc"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
 end
