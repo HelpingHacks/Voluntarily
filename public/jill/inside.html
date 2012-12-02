@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="user-scalable=yes, target-densityDpi=device-dpi, initial-scale=1.6" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+	<title>Volunteer</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	
+	<link media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" href="mobile.css" type="text/css" rel="stylesheet" />
+	
+	
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript">//<![CDATA[ 
+	$(window).load(function(){
+	$(function () {
+	    $('div.btn-group[data-toggle-name=*]').each(function(){
+	        var form    = $(this).parents('form').eq(0);
+	        var name    = $(this).attr('data-toggle-name');
+	        var hidden  = $('input[name="' + name + '"]', form);
+	        var type    = $(this).attr('data-toggle');
+	        var check   = [];
+
+	        $('button', $(this)).each(function(){
+	            $(this).live('click', function(){
+	                if($(this).val() == hidden.val())
+	                {
+	                    switch (type) {
+	                        case 'button': $(this).removeClass('active'); hidden.val(0); break;
+	                        case 'buttons-checkbox': $(this).removeClass('active'); break;
+	                        default: hidden.val($(this).val());
+	                    }
+	                }
+	                else
+	                {
+	                    switch (type) {
+	                        case 'button': $(this).addClass('active'); hidden.val(1); break;
+	                        case 'buttons-checkbox': $(this).addClass('active'); break;
+	                        default: hidden.val($(this).val());
+	                    }
+	                }
+	            });
+
+	            if($(this).val() == hidden.val()) $(this).addClass('active');
+	        });
+	    });
+
+
+
+
+
+
+	});
+	});//]]>  
+
+	</script>
+
+
+	<script type="text/javascript">//<![CDATA[ 
+	var organizer_data = new Object;
+  
+	$(window).load(function(){
+	$('#foodadd').click(function() {
+	    $('#foodoutput').html(function(i, val) { return val*1+1 });
+	});
+	$('#foodminus').click(function() {
+	    $('#foodoutput').html(function(i, val) { return val*1-1 });
+	});
+	$('#flashadd').click(function() {
+	    $('#flashoutput').html(function(i, val) { return val*1+1 });
+	});
+	$('#flashminus').click(function() {
+	    $('#flashoutput').html(function(i, val) { return val*1-1 });
+	});
+	$('#clothingadd').click(function() {
+	    $('#clothingoutput').html(function(i, val) { return val*1+1 });
+	});
+	$('#clothingminus').click(function() {
+	    $('#clothingoutput').html(function(i, val) { return val*1-1 });
+	});
+	$('#wateradd').click(function() {
+	    $('#wateroutput').html(function(i, val) { return val*1+1 });
+	});
+	$('#waterminus').click(function() {
+	    $('#wateroutput').html(function(i, val) { return val*1-1 });
+	});
+    (function($){
+    	$.extend({
+    		querystring: function(name) {
+    			var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    			return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+    		}
+    	});	
+    })(jQuery);
+  
+    var organizer_id = $.querystring('organizer_id');
+    $.getJSON(("http://voluntarily.herokuapp.com/pair/"+ organizer_id + "/1"), function(data){
+      // console.log($(data))
+      organizer_data = data;
+  	})
+
+    console.log()
+  	console.log($.querystring('end'))
+	});//]]>  
+
+  
+	</script></head>
+<body>
+
+
+
+	
+	<div class="section">
+		<div class="fixed">
+			<div class="header-address">
+				<h1>Red Hook Initiative</h1>
+				<h2>Route 12</h2>
+			</div>	
+			<div class="add-household-bar">
+				<div class="add-household">
+					<button id="houseadd" type="button" class="btn" >+</button>
+				</div>
+				<div class="add-household">
+					<h3>Add Household</h3>
+				</div>
+				<div class="clear"></div>
+			</div>
+	</div>	
+	<div class="listing">
+		<div class="check">
+			<img src="img/check.png">
+		</div>
+		<p>Mrs. Lois, Miss Lane</p>
+		<p>Apt 5E</p>
+		<p>15 Mill Rd. Brooklyn, NY 11216</p>
+		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<div class="clear"></div>
+	</div>
+	<div class="listing">
+		<div class="check">
+			<img src="img/check.png">
+		</div>
+		<p>Mrs. Lois, Miss Lane</p>
+		<p>Apt 5E</p>
+		<p>15 Mill Rd. Brooklyn, NY 11216</p>
+		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<div class="clear"></div>
+	</div>
+	<div class="listing">
+		<div class="check">
+			<img src="img/check.png">
+		</div>
+		<p>Mrs. Lois, Miss Lane</p>
+		<p>Apt 5E</p>
+		<p>15 Mill Rd. Brooklyn, NY 11216</p>
+		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<div class="clear"></div>
+	</div>
+	<div class="listing">
+		<div class="check">
+			<img src="img/check.png">
+		</div>
+		<p>Mrs. Lois, Miss Lane</p>
+		<p>Apt 5E</p>
+		<p>15 Mill Rd. Brooklyn, NY 11216</p>
+		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<div class="clear"></div>
+	</div>
+	<div class="listing">
+		<div class="check">
+			<img src="img/check.png">
+		</div>
+		<p>Mrs. Lois, Miss Lane</p>
+		<p>Apt 5E</p>
+		<p>15 Mill Rd. Brooklyn, NY 11216</p>
+		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<div class="clear"></div>
+	</div>
+	<div class="listing">
+		<div class="check">
+			<img src="img/check.png">
+		</div>
+		<p>Mrs. Lois, Miss Lane</p>
+		<p>Apt 5E</p>
+		<p>15 Mill Rd. Brooklyn, NY 11216</p>
+		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<div class="clear"></div>
+	</div>
+	<div class="listing">
+		<div class="check">
+			<img src="img/check.png">
+		</div>
+		<p>Mrs. Lois, Miss Lane</p>
+		<p>Apt 5E</p>
+		<p>15 Mill Rd. Brooklyn, NY 11216</p>
+		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<div class="clear"></div>
+	</div>
+
+	</div>
+	
+	
+</body>
+</html>
+
+
+<style>
+body{background:#dadada;}
+.header-information{border-bottom:black solid 2px;padding:10px;background: white;}
+.header-information h1{font-weight:normal;font-size:15px;line-height:20px;}
+.header-information h2{font-size:15px;line-height:20px;}
+.section{border-bottom:white solid 3px;background:#dadada;}
+.section-header{background:#333;}
+.section-header h1{color:whitesmoke;font-size:15px;text-indent:10px;margin:5px 0;line-height:20px;padding:5px 0;}
+.title{float:left;width:150px;}
+.title h3{padding:22px;font-size:25px;color:#333;}
+.title.continue-visiting h3{padding:11px 22px;}
+.title.urgency{float:initial;}
+.title.urgency h3{padding:11px 22px 0;}
+.title.supplies h3{padding:5px 22px;}
+.control{float:right;margin:0px 20px 10px 0;padding:10px 10px 5px 10px;}
+.control.continue-visiting{padding:15px 10px 0;}
+.control button{font-weight:bold;padding: 10px 20px;}
+.control label{margin:0;}
+.control.urgency{float:initial;}
+.control #urgency {-webkit-appearance: none !important;background: url('img/range.png');height: 40px;width: 255px;background-repeat: no-repeat;}
+.control.utilities .button.utilities{float:left;margin-right:10px;}
+.control.utilities .button.utilities:last-child{float:left;margin-right:0px;}
+.control.utilities .button.utilities label{text-align:center;}
+.add, .add:hover{background: gray;color: white;font-size:25px;}
+.minus{font-size:25px;}
+.output{border:1px solid black;border-radius:5px;background:white;font-size:25px;}
+.contact-date p{margin:0px;padding-top:10px;}
+.clear{clear:both;}
+.no-border{border:0;}
+
+.red h3{color:#be1622;}
+.yellow h3{color:#ffed00;}
+.oj h3{color:#e94e1b;}
+.blue h3{color:#07afb9;}
+
+.btn.active{background: green;color: white;}
+
+
+.household {float:left;margin-right:10px;}
+#houseadd{background:green;font-size:20px;color:white;}
+.header-address {text-indent:10px;background:#333;}
+.header-address h1{color:whitesmoke;font-size:15px;line-height:25px;}
+.header-address h2{color:whitesmoke;font-size:15px;font-weight:normal;line-height:25px;}
+.add-household-bar{background:white;}
+.add-household{float:left;margin:10px 0 10px 10px;}
+.fixed{box-shadow: 1px black;}
+.listing{background:whitesmoke;text-indent:10px;padding:10px 0;border-bottom:1px solid grey;}
+.listing p{margin:0;}
+.listing .arrow{margin:-30px 0 0 10px;float:right;padding-right:30px;font-size:30px;}
+.listing .arrow img{}
+.listing .check img{float: left;margin: 15px 10px;}
+body{width:100%;max-width:320px;}
+@media all and (max-width: 320px) {
+	body{width:320px;}
+}
+</style>
+

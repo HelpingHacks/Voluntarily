@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="user-scalable=yes, target-densityDpi=device-dpi, initial-scale=1.6" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+	<title>Volunteer</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" href="mobile.css" type="text/css" rel="stylesheet" />
+	
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+	<script type="text/javascript">//<![CDATA[ 
+	$(window).load(function(){
+	$(function () {
+	    $('div.btn-group[data-toggle-name=*]').each(function(){
+	        var form    = $(this).parents('form').eq(0);
+	        var name    = $(this).attr('data-toggle-name');
+	        var hidden  = $('input[name="' + name + '"]', form);
+	        var type    = $(this).attr('data-toggle');
+	        var check   = [];
+
+	        $('button', $(this)).each(function(){
+	            $(this).live('click', function(){
+	                if($(this).val() == hidden.val())
+	                {
+	                    switch (type) {
+	                        case 'button': $(this).removeClass('active'); hidden.val(0); break;
+	                        case 'buttons-checkbox': $(this).removeClass('active'); break;
+	                        default: hidden.val($(this).val());
+	                    }
+	                }
+	                else
+	                {
+	                    switch (type) {
+	                        case 'button': $(this).addClass('active'); hidden.val(1); break;
+	                        case 'buttons-checkbox': $(this).addClass('active'); break;
+	                        default: hidden.val($(this).val());
+	                    }
+	                }
+	            });
+
+	            if($(this).val() == hidden.val()) $(this).addClass('active');
+	        });
+	    });
+
+
+
+
+
+
+	});
+	});//]]>  
+
+	</script>
+
+
+	<script type="text/javascript">//<![CDATA[ 
+	$(window).load(function(){
+	$('#foodadd').click(function() {
+	    $('#foodoutput').html(function(i, val) { return val*1+1 });
+	});
+	$('#foodminus').click(function() {
+	    $('#foodoutput').html(function(i, val) { return val*1-1 });
+	});
+	$('#flashadd').click(function() {
+	    $('#flashoutput').html(function(i, val) { return val*1+1 });
+	});
+	$('#flashminus').click(function() {
+	    $('#flashoutput').html(function(i, val) { return val*1-1 });
+	});
+	$('#clothingadd').click(function() {
+	    $('#clothingoutput').html(function(i, val) { return val*1+1 });
+	});
+	$('#clothingminus').click(function() {
+	    $('#clothingoutput').html(function(i, val) { return val*1-1 });
+	});
+	$('#wateradd').click(function() {
+	    $('#wateroutput').html(function(i, val) { return val*1+1 });
+	});
+	$('#waterminus').click(function() {
+	    $('#wateroutput').html(function(i, val) { return val*1-1 });
+	});
+	if ($('#suppliesoutput'-i)){
+		$('#suppliesadd'-i).click(function() {
+		    $('#suppliesoutput'-i).html(function(i, val) { return val*1+1 });
+		});
+		$('#suppliesminus'-i).click(function() {
+		    $('#suppliesoutput'-i).html(function(i, val) { return val*1-1 });
+		});
+	}
+	
+	});//]]>  
+
+	</script>
+	
+	<script type="text/javascript">//<![CDATA[ 
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+
+		var yyyy = today.getFullYear();
+		if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = yyyy+'/'+mm+'/'+dd;
+		
+		
+		
+		
+		
+		
+	        $('#add_priority').live('click', function() {
+						var necessityDiv = $('.supplies-list');
+		        var i = $('.supplies-list .section').size() + 1;
+		$('<div class="section"><div class="section-body"><div class="title supplies blue"><h3>Misc.</h3><input type="text" placeholder="what else?"></div><div class="control water"><label># needed</label><button id="wateradd" type="button" class="btn add" >+</button><button id="waterminus" type="button" class="btn minus">-</button><button id="wateroutput" type="button" class="btn output">1</button></div><div class="clear"></div></div></div>').appendTo(necessityDiv);
+	        });
+
+	        $('#remove_priority').live('click', function() { 
+	                if( i > 2 ) {
+	                        $(this).parents('.section').remove();
+	                        i--;
+	                }
+	                return false;
+	        });
+
+	</script>
+	
+	
+	</head>
+<body>
+	<form id="body-form">
+	
+ <div class="header-information">
+	  <input id="visit_name" value="Mrs. Lois, Miss Lane">
+		
+		
+		<h1><textarea id="visit_address" value="15 Mill Rd. Brooklyn, NY, 11216">15 Mill Rd. Brooklyn, NY, 11216</textarea></h1>
+		<a href="http://www.salesmoto.com/pearson/charts.html" target="_blank">Supply and Demand Chart</a>
+ </div>	
+	
+	
+	<div class="section">
+		<div class="section-header"></div>
+		
+		<div class="section-body">
+			<div class="title">
+				<h3>Contacted?</h3>
+</div>	
+			
+			<div class="control">
+				<div class="controls btn-group" data-toggle="buttons-radio" data-toggle-name="radio_group">
+            <button type="button" value="1" class="btn" data-toggle="button">Yes</button>
+            <button type="button" value="0" class="btn" data-toggle="button">No</button>
+						<input id="visit_contacted" style="display:none" value="1">
+        </div>
+			<div class="contact-date">
+				<p></p>
+			</div>	
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+		
+  </div>
+	
+	<div class="section">
+		<div class="section-header"></div>
+		
+		<div class="section-body">
+			<div class="title continue-visiting">
+				<h3>Continue Visiting?</h3>
+			</div>	
+			
+			<div class="control continue-visiting">
+				<div class="controls btn-group" data-toggle="buttons-radio" data-toggle-name="radio_group">
+            <button type="button" value="1" class="btn" data-toggle="button">Yes</button>
+            <button type="button" value="0" class="btn" data-toggle="button">No</button>
+        </div>
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+		
+	</div>
+	
+	
+	
+	
+	
+	<div class="section no-border">
+		<div class="section-header"></div>
+		
+		<div class="section-body">
+			<div class="title urgency">
+				<h3>Urgency</h3>
+			</div>	
+			
+			<div class="control urgency">
+				<div class="controls btn-group" style="text-align: center;" >
+            <input type="range" id="urgency" name="points" min="1" max="5">
+        </div>
+				<div class="controls btn-group" style="float:right;margin:5px ">
+            <a class="btn" href="http://salesmoto.com/pearson/pearson.php" target="_blank">CPR Instruction</a>
+        </div>
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+		
+	</div>
+	<div class="section no-border">
+		<div class="section-header">
+			<h1>Utilities</h1>
+		</div>
+		
+		<div class="section-body">
+			
+			<div class="control utilities">
+					<div class="button utilities">
+            <button type="button" value="1" class="btn power-btn" data-toggle="button"></button>
+						<label>Power</label>
+						<input id="visit_power" style="display:none" value="1">
+    			</div>
+          <div class="button utilities">
+	  				<button type="button" value="1" class="btn heat-btn" data-toggle="button"></button>
+						<label>Heat</label>
+						<input id="visit_heat" style="display:none" value="1">
+					</div>	
+       		<div class="button utilities">
+            <button type="button" value="1" class="btn water-btn" data-toggle="button"></button>
+						<label>Water</label>
+						<input id="visit_water" style="display:none" value="1">
+					</div>	
+					<div class="button utilities">	
+            <button type="button" value="1" class="btn gas-btn" data-toggle="button"></button>
+						<label>Gas</label>
+						<input id="visit_gas" style="display:none" value="1">
+					</div>
+    
+				
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+</div>	
+	
+	<div class="section-header">
+			<h1>Supplies</h1>
+	</div>
+	
+	<div class="supplies-list">
+		<div class="section">		
+		 <div class="section-body">
+				<div class="title supplies oj">
+					<h3>Firstaid</h3>
+					<img src="img/firstaid.png">
+				</div>	
+
+				<div class="control firstaid">
+					<label># needed</label>
+	            <button id="foodadd" type="button" class="btn add" >+</button>
+							<button id="foodminus" type="button" class="btn minus">-</button>
+							<button id="firstaidoutput" type="button" class="btn output">1</button>
+
+
+
+				</div>	
+				<div class="clear"></div>
+
+
+		 </div>
+		</div>
+	
+	
+	<div class="section">		
+	 <div class="section-body">
+			<div class="title supplies oj">
+				<h3>Food</h3>
+				<img src="img/forkknife.png">
+			</div>	
+			
+			<div class="control food">
+				<label># needed</label>
+            <button id="foodadd" type="button" class="btn add" >+</button>
+						<button id="foodminus" type="button" class="btn minus">-</button>
+						<button id="foodoutput" type="button" class="btn output">1</button>
+					
+
+			
+			</div>	
+			<div class="clear"></div>
+			
+		
+	 </div>
+	</div>
+	
+	
+	<div class="section">	
+	  <div class="section-body">
+			<div class="title supplies red">
+				<h3>Flashlight</h3>
+				<img src="img/flashlight.png">
+			</div>	
+			
+			<div class="control flashlight">
+				<label># needed</label>
+        <button id="flashadd" type="button" class="btn add" >+</button>
+				<button id="flashminus" type="button" class="btn minus">-</button>
+				<button id="flashoutput" type="button" class="btn output">1</button>
+					
+
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+	</div>
+	
+	
+	<div class="section">	
+	  <div class="section-body">
+			<div class="title supplies yellow">
+				<h3>Clothing</h3>
+				<img src="img/shirts.png">
+	    </div>	
+			
+			<div class="control clothing">
+				<label># needed</label>
+        <button id="clothingadd" type="button" class="btn add" >+</button>
+				<button id="clothingminus" type="button" class="btn minus">-</button>
+				<button id="clothingoutput" type="button" class="btn output">1</button>
+					
+
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+	</div>
+	
+	<div class="section">
+		<div class="section-body">
+			<div class="title supplies blue">
+				<h3>Water</h3>
+				<img src="img/water_bottles.png">
+			</div>	
+			
+			<div class="control water">
+				<label># needed</label>
+        <button id="wateradd" type="button" class="btn add" >+</button>
+				<button id="waterminus" type="button" class="btn minus">-</button>
+				<button id="wateroutput" type="button" class="btn output">1</button>
+			</div>	
+			<div class="clear"></div>
+		</div>	
+	</div>
+		
+	<div class="section">	
+		<div class="section-body">
+			<div class="title supplies blue">
+				<h3>Misc.</h3>
+				<input type="text" placeholder="what else?">
+			</div>	
+			
+			<div class="control water">
+				<label># needed</label>
+        <button id="wateradd" type="button" class="btn add" >+</button>
+				<button id="waterminus" type="button" class="btn minus">-</button>
+				<button id="wateroutput" type="button" class="btn output">1</button>
+					
+
+			
+			</div>	
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	
+</div>
+	
+	<div class="section">
+		<span id="add_priority">Add Supplies</span>
+	</div>
+	
+	<div class="section no-border">
+		
+		<div class="section-body">
+			
+			<div class="control labor submit-btn">
+            <button class="btn btn-success btn-large"><i class="icon-white icon-user"></i> Submit Survey</button>
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+		
+	</div>
+	
+	
+	<div class="section no-border">
+		<div class="section-header">
+			<h1>Labor</h1>
+		</div>
+		
+		<div class="section-body">
+			
+			<div class="control labor">
+            <button class="btn btn-warning btn-large"><i class="icon-white icon-user"></i> Request Labor</button>
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+		
+	</div>	
+	<div class="section no-border">
+		<div class="section-header">
+			<h1>Emergency</h1>
+		</div>
+		
+		<div class="section-body">
+			
+			<div class="control emergency">
+            <button class="btn btn-danger btn-large"><i class="icon-white icon-bullhorn"></i> Emergency Assistance</button>
+			
+			</div>	
+			<div class="clear"></div>
+		</div>	
+		
+	</div>	
+	
+	
+
+	
+	</form>
+</body>
+</html>
+
+
+<style>
+body{background:#dadada;}
+.header-information{border-bottom:black solid 2px;padding:10px;background: white;}
+.header-information h1{font-weight:normal;font-size:15px;line-height:20px;}
+.header-information h2{font-size:15px;line-height:20px;}
+.section{border-bottom:white solid 3px;background:#dadada;}
+.section-header{background:#333;}
+.section-header h1{color:whitesmoke;font-size:15px;text-indent:10px;margin:5px 0;line-height:20px;padding:5px 0;}
+.title{float:left;width:124px;}
+.title h3{padding:22px;font-size:25px;color:#333;}
+.title.continue-visiting h3{padding:11px 22px;}
+.title.urgency{float:initial;}
+.title.urgency h3{padding:11px 22px 0;}
+.title.supplies h3{padding:5px 22px;}
+.control{float:right;margin:0px 8px 10px 0;padding:10px 10px 5px 10px;}
+.control.continue-visiting{padding:15px 10px 0;}
+.control button{font-weight:bold;padding: 10px 20px;}
+.control label{margin:0;}
+.control.urgency{float:initial;}
+.control #urgency {-webkit-appearance: none !important;background: url('img/range.png');height: 40px;width: 255px;background-repeat: no-repeat;}
+.control.utilities .button.utilities{float:left;margin-right:10px;}
+.control.utilities .button.utilities:last-child{float:left;margin-right:0px;}
+.control.utilities .button.utilities label{text-align:center;}
+.add, .add:hover{background: gray;color: white;font-size:25px;}
+.minus{font-size:25px;}
+.output{border:1px solid black;border-radius:5px;background:white;font-size:25px;}
+.contact-date p{margin:0px;padding-top:10px;}
+.clear{clear:both;}
+.no-border{border:0;}
+.supplies h3{color:white;}
+
+/.red h3{color:#be1622;}
+/.yellow h3{color:#ffed00;}
+/.oj h3{color:#e94e1b;}
+/.blue h3{color:#07afb9;}
+
+.btn.active{background: green;color: white;}
+
+
+.household {float:left;margin-right:10px;}
+#houseadd{background:green;font-size:20px;color:white;}
+.header-address {text-indent:10px;background:#333;}
+.header-address h1{color:whitesmoke;font-size:15px;line-height:25px;}
+.header-address h2{color:whitesmoke;font-size:15px;font-weight:normal;line-height:25px;}
+.add-household-bar{background:white;}
+.add-household{float:left;margin:10px 0 10px 10px;}
+.fixed{box-shadow: 1px black;}
+.listing{background:whitesmoke;text-indent:10px;padding:10px 0;border-bottom:1px solid grey;}
+.listing p{margin:0;}
+.listing .arrow{margin:-30px 0 0 10px;float:right;padding-right:30px;font-size:30px;}
+.listing .arrow img{}
+.listing .check img{float: left;margin: 15px 10px;}
+.submit-btn{float:none;text-align:center;}
+
+.utilities .btn{height:48px;width:48px;}
+.utilities .btn:hover{background-position:0px;}
+.power-btn{background:url('img/power_on.png');background-repeat:no-repeat;}
+.utilities .power-btn.active{background:url('img/power_on.png');opacity:0.5;}
+.gas-btn{background:url('img/gas_on.png');background-repeat:no-repeat;}
+.utilities .gas-btn.active{background:url('img/gas_on.png');opacity:0.5;}
+.water-btn{background:url('img/water_on.png');background-repeat:no-repeat;}
+.utilities .water-btn.active{background:url('img/water_on.png');opacity:0.5;}
+.heat-btn{background:url('img/heat_on.png');background-repeat:no-repeat;}
+.utilities .heat-btn.active{background:url('img/heat_on.png');opacity:0.5;}
+input, textarea{border:none;}
+#visit_address{font-weight:bolder;font-size:15px;}
+body{width:100%;max-width:320px;}
+@media all and (max-width: 320px) {
+	body{width:320px;}
+}
+</style>
+

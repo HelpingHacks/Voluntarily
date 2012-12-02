@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="user-scalable=yes, target-densityDpi=device-dpi, initial-scale=1.6" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+	<title>Volunteer</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" type="text/css" rel="stylesheet" />
+	
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+	<script>
+		$(".login-btn").live("click", function() {
+			$('.action-part').fadeOut("slow");
+			$('.group-login').fadeIn("slow");
+		});
+		
+    var organizer_data = new Object  
+			
+		$(".submit-btn").live("click", function() {
+			var organizer_id = $(".group-id").val();  
+      // var organizer_data = Object
+					
+			$.getJSON(("http://voluntarily.herokuapp.com/pair/"+ organizer_id + "/1"), function(data){
+        // console.log($(data))
+        organizer_data = data
+			})
+     
+      var q = $.param(organizer_data)
+		  //             var test = 'testing123'
+		  //             
+		  //             var temp_thing = organizer_data 
+		  //             console.log(temp_thing)
+		  //             var temper_thing = $.param(temp_thing)
+		  //             console.log(temper_thing)
+			
+			// console.log("q:" + q)
+			//       console.log("long deal:" + decodeURIComponent($.param(organizer_data)));
+			//       console.log("param:" + $.param(organizer_data))
+			//       console.log("organizer_data" + organizer_data);
+			//       console.log('jquery wrapped' + $(organizer_data));
+			
+			url = ('inside.html?' + ($.param(organizer_data))  + '&end=false')
+			
+      window.location.href=(url);
+		});
+	</script>
+<body>
+	
+	<form method="POST" id="myForm"><div id="formResponse"></div> </form>
+	
+	
+	
+<div class="logo">
+	<img src="img/logo.png">
+</div>	
+
+<div class="action-part">
+<div class="login">
+	<input class="span2" id="inputIcon" type="text" placeholder="Username">
+	<input class="span3" id="inputIcon" type="text" placeholder="Password">
+</div>
+<div class="button-login">
+	<a class="btn btn-info btn-large login-btn">Login</a>
+	
+	<label>Not Registered?</label>
+	<a href="#" class="btn btn-primary btn-large" href="http://www.salesmoto.com/pearson/inside.html">Sign Up</a>
+</div>
+</div>
+
+<div class="group-login" style="display:none">
+	<form action="inside.html">
+  	<input name='organizer_id' class="group-id" id="inputIcon" type="text" placeholder="Organizer ID" style="width:212px;margin-bottom:10px;height:25px">
+  <!-- <a  class="btn btn-info btn-large submit-btn">Submit</a> -->
+    <input type='submit' value='Submit' class='btn btn-info btn-large submit-btn'>
+  </form>
+</div>	
+
+</body>
+</html>
+
+
+<style>
+body{background:#0C282B;}
+.action-part, .group-login{margin-top:-100px !important;margin:0 auto;width:220px;padding-bottom:300px;}
+.login{width:200px;}
+.login .span2, .login .span3, .group-login .group-id{margin:0;width:200px;font-size:15px;}
+.login .span2{border-bottom-left-radius:0px;border-bottom-right-radius:0px;padding:10px;}
+.login .span3{border-top:0;border-top-left-radius:0px;border-top-right-radius:0px;padding:10px;}
+.button-login{margin-top:10px;}
+.button-login label{color:white;text-align:center;padding:30px 0 0px;font-weight:bold;color:whitesmoke;}
+.btn {width:192px;margin:5px 0 0;-webkit-box-shadow: 0 3px 0 #235386, inset 0px 1px rgba(255, 255, 255, 0.2), transparent 0 0 0, transparent 0 0 0, transparent 0 0 0;
+box-shadow: 0 3px 0 #235386, inset 0px 1px rgba(255, 255, 255, 0.2), transparent 0 0 0, transparent 0 0 0, transparent 0 0 0;}
+.logo{margin: 0 auto;width: 350px;margin-top:-100px;}
+body{width:100%;max-width:320px;}
+@media all and (max-width: 320px) {
+	body{width:320px;}
+}
+</style>
+
