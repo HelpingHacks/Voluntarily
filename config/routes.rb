@@ -1,5 +1,8 @@
 Voluntarily::Application.routes.draw do
 
+  resources :miscs
+
+
   resources :surveys
 
 
