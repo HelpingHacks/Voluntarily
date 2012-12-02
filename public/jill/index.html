@@ -21,34 +21,15 @@
 			$('.group-login').fadeIn("slow");
 		});
 		
-    var organizer_data = new Object  
-			
+		var organizer_data = new Object
+		
 		$(".submit-btn").live("click", function() {
-			var organizer_id = $(".group-id").val();  
-      // var organizer_data = Object
-					
-			$.getJSON(("http://voluntarily.herokuapp.com/pair/"+ organizer_id + "/1"), function(data){
+      // var abc = $(".group-id").val();  
+			
+			$.getJSON(("http://voluntarily.herokuapp.com/pair/"+ abc + "/1001"), function(data){
         // console.log($(data))
         organizer_data = data
 			})
-     
-      var q = $.param(organizer_data)
-		  //             var test = 'testing123'
-		  //             
-		  //             var temp_thing = organizer_data 
-		  //             console.log(temp_thing)
-		  //             var temper_thing = $.param(temp_thing)
-		  //             console.log(temper_thing)
-			
-			// console.log("q:" + q)
-			//       console.log("long deal:" + decodeURIComponent($.param(organizer_data)));
-			//       console.log("param:" + $.param(organizer_data))
-			//       console.log("organizer_data" + organizer_data);
-			//       console.log('jquery wrapped' + $(organizer_data));
-			
-			url = ('inside.html?' + ($.param(organizer_data))  + '&end=false')
-			
-      window.location.href=(url);
 		});
 	</script>
 <body>

@@ -9,7 +9,7 @@
 	<title>Volunteer</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	
-	<link media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" href="mobile.css" type="text/css" rel="stylesheet" />
+	<link media="handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px)" type="text/css" rel="stylesheet" />
 	
 	
 
@@ -62,53 +62,51 @@
 
 
 	<script type="text/javascript">//<![CDATA[ 
-	var organizer_data = new Object;
-  
 	$(window).load(function(){
-	$('#foodadd').click(function() {
-	    $('#foodoutput').html(function(i, val) { return val*1+1 });
-	});
-	$('#foodminus').click(function() {
-	    $('#foodoutput').html(function(i, val) { return val*1-1 });
-	});
-	$('#flashadd').click(function() {
-	    $('#flashoutput').html(function(i, val) { return val*1+1 });
-	});
-	$('#flashminus').click(function() {
-	    $('#flashoutput').html(function(i, val) { return val*1-1 });
-	});
-	$('#clothingadd').click(function() {
-	    $('#clothingoutput').html(function(i, val) { return val*1+1 });
-	});
-	$('#clothingminus').click(function() {
-	    $('#clothingoutput').html(function(i, val) { return val*1-1 });
-	});
-	$('#wateradd').click(function() {
-	    $('#wateroutput').html(function(i, val) { return val*1+1 });
-	});
-	$('#waterminus').click(function() {
-	    $('#wateroutput').html(function(i, val) { return val*1-1 });
-	});
-    (function($){
-    	$.extend({
-    		querystring: function(name) {
-    			var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    			return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-    		}
-    	});	
-    })(jQuery);
-  
-    var organizer_id = $.querystring('organizer_id');
-    $.getJSON(("http://voluntarily.herokuapp.com/pair/"+ organizer_id + "/1"), function(data){
-      // console.log($(data))
-      organizer_data = data;
-  	})
-
-    console.log()
-  	console.log($.querystring('end'))
+		$('#houseadd').live('click', function() {
+			var necessityDiv = $('.inside-listing');
+$('<div class="listing"><div class="check"><div class="checkboxes" id="checkbox-1" style="background-image: url(file:///Users/chany2/Desktop/Help/jill/img/unchecked.gif);"></div></div><p>Mrs. Lois, Miss Lane</p><p>Apt 5E</p><p>15 Mill Rd. Brooklyn, NY 11216</p><a href=""><div class="arrow"><img src="img/arrow.png"></div></a><div class="clear"></div></div>').appendTo(necessityDiv);
+    });
+	
+	
+	
+	$("#checkbox-1").toggle(function(){
+    $("#checkbox-1").css({"background-image":"url(img/unchecked.gif)"});},function(){
+    $("#checkbox-1").css({"background-image":"url(img/intermediate.gif)"});},function(){
+    $("#checkbox-1").css({"background-image":"url(img/checked.gif)"});
+  });
+	$("#checkbox-2").toggle(function(){
+    $("#checkbox-2").css({"background-image":"url(img/unchecked.gif)"});},function(){
+    $("#checkbox-2").css({"background-image":"url(img/intermediate.gif)"});},function(){
+    $("#checkbox-2").css({"background-image":"url(img/checked.gif)"});
+  });
+	$("#checkbox-3").toggle(function(){
+     	$("#checkbox-3").css({"background-image":"url(img/unchecked.gif)"});},function(){
+   $("#checkbox-3").css({"background-image":"url(img/intermediate.gif)"});},function(){
+    $("#checkbox-3").css({"background-image":"url(img/checked.gif)"});
+  });
+	$("#checkbox-4").toggle(function(){
+    $("#checkbox-4").css({"background-image":"url(img/unchecked.gif)"});},function(){
+    $("#checkbox-4").css({"background-image":"url(img/intermediate.gif)"});},function(){
+    $("#checkbox-4").css({"background-image":"url(img/checked.gif)"});
+  });
+	$("#checkbox-5").toggle(function(){
+    $("#checkbox-5").css({"background-image":"url(img/unchecked.gif)"});},function(){
+    $("#checkbox-5").css({"background-image":"url(img/intermediate.gif)"});},function(){
+    $("#checkbox-5").css({"background-image":"url(img/checked.gif)"});
+  });
+	$("#checkbox-6").toggle(function(){
+    $("#checkbox-6").css({"background-image":"url(img/unchecked.gif)"});},function(){
+    $("#checkbox-6").css({"background-image":"url(img/intermediate.gif)"});},function(){
+    $("#checkbox-6").css({"background-image":"url(img/checked.gif)"});
+  });
+	$("#checkbox-7").toggle(function(){
+    $("#checkbox-7").css({"background-image":"url(img/unchecked.gif)"});},function(){
+    $("#checkbox-7").css({"background-image":"url(img/intermediate.gif)"});},function(){
+    $("#checkbox-7").css({"background-image":"url(img/checked.gif)"});
+  });
 	});//]]>  
 
-  
 	</script></head>
 <body>
 
@@ -118,8 +116,7 @@
 	<div class="section">
 		<div class="fixed">
 			<div class="header-address">
-				<h1>Red Hook Initiative</h1>
-				<h2>Route 12</h2>
+				<div id="back-setting"></div>
 			</div>	
 			<div class="add-household-bar">
 				<div class="add-household">
@@ -131,77 +128,80 @@
 				<div class="clear"></div>
 			</div>
 	</div>	
+	<div class="inside-listing">
+	<a href="outside.html" style="text-decoration:none;color:333;" >
+  	<div class="listing">
+  		<div class="check">
+  			<div class="checkboxes" id="checkbox-1"></div>
+  		</div>
+  		<p>Mrs. Lois, Miss Lane</p>
+  		<p>Apt 5E</p>
+  		<p>15 Mill Rd. Brooklyn, NY 11216</p>
+  		<div class="arrow"><img src="img/arrow.png"></div>
+  		<div class="clear"></div>
+  	</div>
+  </a>
 	<div class="listing">
 		<div class="check">
-			<img src="img/check.png">
+			<div class="checkboxes" id="checkbox-2"></div>
 		</div>
 		<p>Mrs. Lois, Miss Lane</p>
 		<p>Apt 5E</p>
 		<p>15 Mill Rd. Brooklyn, NY 11216</p>
-		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<a href="outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
 		<div class="clear"></div>
 	</div>
 	<div class="listing">
 		<div class="check">
-			<img src="img/check.png">
+			<div class="checkboxes" id="checkbox-3"></div>
 		</div>
 		<p>Mrs. Lois, Miss Lane</p>
 		<p>Apt 5E</p>
 		<p>15 Mill Rd. Brooklyn, NY 11216</p>
-		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<a href="outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
 		<div class="clear"></div>
 	</div>
 	<div class="listing">
 		<div class="check">
-			<img src="img/check.png">
+			<div class="checkboxes" id="checkbox-4"></div>
 		</div>
 		<p>Mrs. Lois, Miss Lane</p>
 		<p>Apt 5E</p>
 		<p>15 Mill Rd. Brooklyn, NY 11216</p>
-		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<a href="outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
 		<div class="clear"></div>
 	</div>
 	<div class="listing">
 		<div class="check">
-			<img src="img/check.png">
+			<div class="checkboxes" id="checkbox-5"></div>
 		</div>
 		<p>Mrs. Lois, Miss Lane</p>
 		<p>Apt 5E</p>
 		<p>15 Mill Rd. Brooklyn, NY 11216</p>
-		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<a href="outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
 		<div class="clear"></div>
 	</div>
 	<div class="listing">
 		<div class="check">
-			<img src="img/check.png">
+			<div class="checkboxes" id="checkbox-6"></div>
 		</div>
 		<p>Mrs. Lois, Miss Lane</p>
 		<p>Apt 5E</p>
 		<p>15 Mill Rd. Brooklyn, NY 11216</p>
-		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<a href="outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
 		<div class="clear"></div>
 	</div>
 	<div class="listing">
 		<div class="check">
-			<img src="img/check.png">
+			<div class="checkboxes" id="checkbox-7"></div>
 		</div>
 		<p>Mrs. Lois, Miss Lane</p>
 		<p>Apt 5E</p>
 		<p>15 Mill Rd. Brooklyn, NY 11216</p>
-		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
+		<a href="outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
 		<div class="clear"></div>
 	</div>
-	<div class="listing">
-		<div class="check">
-			<img src="img/check.png">
-		</div>
-		<p>Mrs. Lois, Miss Lane</p>
-		<p>Apt 5E</p>
-		<p>15 Mill Rd. Brooklyn, NY 11216</p>
-		<a href="http://www.salesmoto.com/pearson/outside.html"><div class="arrow"><img src="img/arrow.png"></div></a>
-		<div class="clear"></div>
 	</div>
-
 	</div>
 	
 	
@@ -248,14 +248,18 @@ body{background:#dadada;}
 
 
 .household {float:left;margin-right:10px;}
-#houseadd{background:green;font-size:20px;color:white;}
-.header-address {text-indent:10px;background:#333;}
+#houseadd{background:green;font-size:20px;color:white;background-position-y: -3px !important;
+background-position-x: -3px !important;	background: url(img/btn_plus.png);
+width: 49px;
+height: 50px;}
+.header-address {text-indent:10px;background:#333;background-image: url(img/header.png);
+background-size: 320px;height:50px;}
 .header-address h1{color:whitesmoke;font-size:15px;line-height:25px;}
 .header-address h2{color:whitesmoke;font-size:15px;font-weight:normal;line-height:25px;}
 .add-household-bar{background:white;}
-.add-household{float:left;margin:10px 0 10px 10px;}
+.add-household{float:left;margin:10px 0 10px 13px;}
 .fixed{box-shadow: 1px black;}
-.listing{background:whitesmoke;text-indent:10px;padding:10px 0;border-bottom:1px solid grey;}
+.listing{background:url(img/bg.png);text-indent:10px;padding:10px 0;box-shadow: 0px 0px 3px;}
 .listing p{margin:0;}
 .listing .arrow{margin:-30px 0 0 10px;float:right;padding-right:30px;font-size:30px;}
 .listing .arrow img{}
@@ -264,5 +268,7 @@ body{width:100%;max-width:320px;}
 @media all and (max-width: 320px) {
 	body{width:320px;}
 }
+#back-setting{background-image:url(img/btn_buoy.png);width:50px;height:50px;background-size:28px;background-repeat:no-repeat;background-position: 11px 8px;}
+.checkboxes{background-repeat:no-repeat;width:50px;height:50px;background-image:url(img/unchecked.gif);float: left;margin-left: 13px;}
 </style>
 
