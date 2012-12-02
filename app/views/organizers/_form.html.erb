@@ -1,0 +1,41 @@
+<%= form_for(@organizer) do |f| %>
+  <% if @organizer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@organizer.errors.count, "error") %> prohibited this organizer from being saved:</h2>
+
+      <ul>
+      <% @organizer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :organization %><br />
+    <%= f.text_field :organization %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.number_field :phone_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
