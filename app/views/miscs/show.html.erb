@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @misc.name %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @misc.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_misc_path(@misc) %> |
+<%= link_to 'Back', miscs_path %>
