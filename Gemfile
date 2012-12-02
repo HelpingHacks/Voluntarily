@@ -10,9 +10,9 @@ group :development, :test do
 end
 gem 'pg', :group => :production 
 gem 'therubyracer'
-gem 'rspec-rails'
+# gem 'rspec-rails'
 gem 'factory_girl' 
-gem 'pickler'
+# gem 'pickler'
 
 
 # Gems used only for assets and not required
@@ -21,8 +21,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'bootstrap-sass', '>= 2.2.1.1'
-  gem 'devise'
-  gem 'cancan'
+ # gem 'devise'
+ # gem 'cancan'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
