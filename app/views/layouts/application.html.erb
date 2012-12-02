@@ -66,6 +66,7 @@ var options = {'title':'Percentage of homes with Power',
 // Instantiate and draw our chart, passing in some options.
 var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
 chart.draw(data, options);
+
 }
 </script>
 
@@ -113,11 +114,11 @@ chart.draw(data, options);
 
 
         <%=  yield  %>
-
-      </div>
-       <div class="map">
+        <div class="map">
             <img src="http://anabeckerdesign.com/voluntarily/map.png" />
         </div>
+      </div>
+       
     </div><!--/row-->
 
 
