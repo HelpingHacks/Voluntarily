@@ -6,7 +6,7 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+# gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'sqlite3'
@@ -23,7 +23,7 @@ gem 'factory_girl'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass', '>= 2.2.1.1'
+ # gem 'bootstrap-sass', '>= 2.2.1.1'
  # gem 'devise'
  # gem 'cancan'
 
