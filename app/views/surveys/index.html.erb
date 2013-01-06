@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Address</th>
     <th>Contacted</th>
     <th>Continue visiting</th>
     <th>Urgency</th>
@@ -12,7 +13,6 @@
     <th>Food</th>
     <th>Medical</th>
     <th>Clothing</th>
-   
     <th>Flashlights</th>
     <th>Misc</th>
     <th></th>
@@ -22,7 +22,8 @@
 
 <% @surveys.each do |survey| %>
   <tr>
-    <td><%= survey.contacted %></td>
+    <td><%= survey.address %></td>
+    <td <%= survey.contacted %>></td>
     <td><%= survey.continue_visiting %></td>
     <td><%= survey.urgency %></td>
     <td><%= survey.power %></td>
@@ -32,7 +33,7 @@
     <td><%= survey.food %></td>
     <td><%= survey.medical %></td>
     <td><%= survey.clothing %></td>
-    <td><%= survey.water %></td>
+    
     <td><%= survey.flashlights %></td>
     <td><%= survey.misc %></td>
     <td><%= link_to 'Show', survey %></td>
