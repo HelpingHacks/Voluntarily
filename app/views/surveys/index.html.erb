@@ -23,8 +23,8 @@
 <% @surveys.each do |survey| %>
   <tr>
     <td><%= survey.address %></td>
-    <td> <%= survey.contacted %></td>
-    <td><%= survey.continue_visiting %></td>
+    <td class="<%= survey.contacted %>"></td>
+    <td class="<%= survey.continue_visiting %>"></td>
     <td><%= survey.urgency %></td>
     <td><%= survey.power %></td>
     <td><%= survey.heat %></td>
