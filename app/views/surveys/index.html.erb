@@ -3,8 +3,8 @@
 <table>
   <tr>
     <th>Address</th>
-    <th>Contacted</th>
-    <th>Continue visiting</th>
+    <!--<th>Contacted</th>
+    <th>Continue visiting</th>-->
     <th>Urgency</th>
     <th>Power</th>
     <th>Heat</th>
@@ -22,17 +22,17 @@
 
 <% @surveys.each do |survey| %>
   <tr>
-    <td><%= survey.address %></td>
-    <td class="<%= survey.contacted %>"></td>
-    <td class="<%= survey.continue_visiting %>"></td>
-    <td><%= survey.urgency %></td>
-    <td><%= survey.power %></td>
-    <td><%= survey.heat %></td>
-    <td><%= survey.water %></td>
-    <td><%= survey.gas %></td>
-    <td><%= survey.food %></td>
-    <td><%= survey.medical %></td>
-    <td><%= survey.clothing %></td>
+    <td class="address"><%= survey.address %></td>
+   <!--<td class="<%= survey.contacted %>"></td>
+    <td class="<%= survey.continue_visiting %>"></td>-->
+    <td class="number"><%= survey.urgency %></td>
+    <td class="<%= survey.power %>"></td>
+    <td class="<%= survey.heat %>"></td>
+    <td class="<%= survey.water %>"></td>
+    <td class="<%= survey.gas %>"></td>
+    <td class="number"><%= survey.food %></td>
+    <td class="<%= survey.medical %>"></td>
+    <td class="number"><%= survey.clothing %></td>
     
     <td><%= survey.flashlights %></td>
     <td><%= survey.misc %></td>
