@@ -5,9 +5,9 @@
     <th>First name</th>
     <th>Last name</th>
     <th>Username</th>
-    <th>Password</th>
     <th>Organization</th>
     <th>Phone number</th>
+    <th class="password">Password</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,9 +18,9 @@
     <td><%= organizer.first_name %></td>
     <td><%= organizer.last_name %></td>
     <td><%= organizer.username %></td>
-    <td><%= organizer.password %></td>
     <td><%= organizer.organization %></td>
     <td><%= organizer.phone_number %></td>
+    <td class="password"><%= organizer.password %></td>
     <td><%= link_to 'Show', organizer %></td>
     <td><%= link_to 'Edit', edit_organizer_path(organizer) %></td>
     <td><%= link_to 'Destroy', organizer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

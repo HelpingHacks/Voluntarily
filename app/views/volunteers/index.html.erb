@@ -5,9 +5,9 @@
     <th>First name</th>
     <th>Last name</th>
     <th>Username</th>
-    <th>Password</th>
     <th>Phone number</th>
     <th>Location</th>
+    <th class="password">Password</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,9 +18,9 @@
     <td><%= volunteer.first_name %></td>
     <td><%= volunteer.last_name %></td>
     <td><%= volunteer.username %></td>
-    <td><%= volunteer.password %></td>
     <td><%= volunteer.phone_number %></td>
     <td><%= volunteer.location %></td>
+    <td class="password"><%= volunteer.password %></td>
     <td><%= link_to 'Show', volunteer %></td>
     <td><%= link_to 'Edit', edit_volunteer_path(volunteer) %></td>
     <td><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
