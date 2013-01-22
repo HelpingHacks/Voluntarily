@@ -17,6 +17,7 @@ gem 'therubyracer'
 gem 'factory_girl' 
 # gem 'pickler'
 
+gem 'geocoder'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -49,6 +50,9 @@ gem 'jquery-rails', '~> 2.0.0'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'pry'
+gem 'pry-doc'
 
 # Refinery CMS
 gem 'refinerycms', '~> 2.0.0'

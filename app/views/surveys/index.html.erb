@@ -22,10 +22,12 @@
 
 <% @surveys.each do |survey| %>
   <tr>
-    <td class="address"><%= survey.address %></td>
+    <td class="address">
+        <%= survey.address %></td>
    <!--<td class="<%= survey.contacted %>"></td>
     <td class="<%= survey.continue_visiting %>"></td>-->
-    <td class="number"><%= survey.urgency %></td>
+    <td class="number">
+        <%= survey.urgency %></td>
     <td class="<%= survey.power %>"></td>
     <td class="<%= survey.heat %>"></td>
     <td class="<%= survey.water %>"></td>
@@ -38,7 +40,8 @@
     <td><%= survey.misc %></td>
     <td><%= link_to 'Show', survey %></td>
     <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
-    <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+        <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

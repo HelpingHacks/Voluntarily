@@ -1,5 +1,13 @@
 Voluntarily::Application.routes.draw do
 
+  # get "locations/show" 
+    # will you need a show??
+
+
+  
+
+get "locations/" => "locations#index"
+
   resources :volunteers
 
 
