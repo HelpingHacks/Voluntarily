@@ -1,4 +1,7 @@
 class SurveysController < ApplicationController
+  before_filter :cors_preflight_check, only: [:create]
+  after_filter :cors_set_access_control_headers, only: [:create]
+
   # GET /surveys
   # GET /surveys.json
   def index
@@ -45,7 +48,7 @@ class SurveysController < ApplicationController
     respond_to do |format|
       if @survey.save
         format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
-        format.json { render json: @survey, status: :created, location: @survey }
+        format.json { render text: 'got it' } #render json: @survey, status: :created, location: @survey }
       else
         format.html { render action: "new" }
         format.json { render json: @survey.errors, status: :unprocessable_entity }

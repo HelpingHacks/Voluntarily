@@ -3,7 +3,7 @@ Voluntarily::Application.routes.draw do
   # get "locations/show" 
     # will you need a show??
 
-
+match 'surveys', to: 'surveys#create', via: :OPTIONS
   
 
 get "locations/" => "locations#index"
