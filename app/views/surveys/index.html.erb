@@ -8,8 +8,8 @@
     <th>Urgency</th>
     <th>Power</th>
     <th>Heat</th>
-    <th>Water</th>
     <th>Gas</th>
+    <th>Water</th>
     <th>Food</th>
     <th>Medical</th>
     <th>Clothing</th>
@@ -30,18 +30,18 @@
         <%= survey.urgency %></td>
     <td class="<%= survey.power %>"></td>
     <td class="<%= survey.heat %>"></td>
-    <td class="<%= survey.water %>"></td>
     <td class="<%= survey.gas %>"></td>
+    <td class="<%= survey.water %>"></td>
     <td class="number"><%= survey.food %></td>
     <td class="<%= survey.medical %>"></td>
     <td class="number"><%= survey.clothing %></td>
     
     <td><%= survey.flashlights %></td>
     <td><%= survey.misc %></td>
-    <td><%= link_to 'Show', survey %></td>
-    <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+    <td><%#= link_to 'Show', survey %></td>
+    <td><%#= link_to 'Edit', edit_survey_path(survey) %></td>
     <td>
-        <%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%#= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
