@@ -1,0 +1,28 @@
+<h1>Listing Locations</h1>
+
+<%require "survey"%>
+
+
+<table>
+  <tr>
+    <th>Addresses</th>
+    <th></th>
+    <th></th>
+   </tr>
+  </table>
+
+
+<table>
+<tr>
+<td>
+<% @surveys.each do |survey| %>
+<p><%= survey.address %></p></tr>
+<p><%#= survey.latitude %></p></tr>
+<p><%#= survey.longitude %></p></tr>
+</td>
+
+<% end %>	
+	
+</table>
+
+
